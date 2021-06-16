@@ -1,0 +1,26 @@
+.main-div{
+    height: 0%;
+    width: 0%;
+}
+
+.img{
+    height: 100px;
+    width: 10px;
+}
+
+.us{
+    color:white;
+    /* position: absolute;
+    bottom: 8px;
+    left: 16px; */
+    /* background-image: url("../Images/custplane.png"); */
+
+   }
+  
+   .p1{
+    color: cornflowerblue;
+    text-align:center;
+    width:500px;
+    font-family:georgia;
+    opacity:0.8;
+   }
