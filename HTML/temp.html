@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Airline</title>
+    <link rel="stylesheet" href="../CSS/booking.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/font-awesome.min.css">
+    <link rel="stylesheet" href="../CSS/themify-icons.css">
+    <script>
+        function toggleHiddenDiv(){
+            let hidden_div = document.getElementById('hidden_div');
+            if(hidden_div.style.visibility == "hidden")
+            {
+                hidden_div.style.visibility = "visible";
+            }
+            else{
+                hidden_div.style.visibility = "hidden";
+            }
+        }
+
+        function decrease(inc_btn, inp_num, dec_btn){
+            let decrease_button = document.getElementById(dec_btn);
+            let input_number1 = document.getElementById(inp_num).value;
+            
+            if(input_number1 > 0)
+            {
+                decrease_button.disabled = false;
+                document.getElementById(inp_num).value--;
+            }
+            else{
+                decrease_button.disabled = true;
+            }
+        }
+        function increase(inc_btn, inp_num, dec_btn){
+            let input_number1 = document.getElementById(inp_num).value;
+            let decrease_button = document.getElementById(dec_btn);
+            if(input_number1 > 0)
+            {
+                decrease_button.disabled = false;
+            }
+            if(input_number1 >= 9)
+            {
+                alert("Max 9 passengers allowd");
+            }
+            else
+            document.getElementById(inp_num).value++;
+        }
+
+        function counter()
+        {
+            let count1 = document.getElementById('input-number1').value;
+            let count2 = document.getElementById('input-number2').value;
+            let count3 = document.getElementById('input-number3').value;
+            let totalCount = document.getElementById('totalCount');
+            let traveller_num = document.getElementById('traveller-title');
+            let classtype = document.getElementsByName('classType');
+            let travelerClassName = document.getElementById('travelerClassName');
+
+            totalCount.value = Number(count1) + Number(count2) + Number(count3);
+            totalCount.textContent = totalCount.value;
+            if( (totalCount.value == 1))
+            {
+                traveller_num.textContent = "Traveller";
+            }
+            else
+                traveller_num.textContent = "Travellers";
+
+            for (let i = 0; i < classtype.length; i++) {
+                if(classtype[i].checked)
+                {
+                    travelerClassName.textContent = classtype[i].value;    
+                }
+            }
+        }
+                
+        function swap(){
+            let city1 = document.getElementById('input1').value;
+            let city2 = document.getElementById('input2').value;
+            var temp = city1;
+            city1 = city2;
+            city2 = temp;
+            document.getElementById('input1').value = city1;
+            document.getElementById('input2').value = city2;
+            
+        }    
+        function refresh(){
+            window.location.reload();
+        }    
+
+    
+    </script>
+</head>
+
+<body>
+    <header class="head">
+        <div>
+            <div class="logo">
+                <a href="index-2.html">
+                </a>
+            </div>
+            <div>
+                <nav>
+                    <ul id="navigation">
+                        <li><a href="Homepage.html">Home</a></li>
+                        <li><a class="active" href="Airlineinfo.html">About</a></li>
+                        <li><a href="#">Book</a></li>
+                        <!-- <li><a href="#">Services</a></li>
+                      <li><a href="#">Safety</a></li> -->
+                        <li><a href="help.html">Contact and Support</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="search_icon">
+                <a href="login.html">
+                    <h4> Login </h4>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-div">
+        <div class="search-form">
+            <h2 style="padding: 20px 20px 0px;"> Book Domestic Flight Tickets starting @ Rs.1598 </h2>
+            <ul class="form">
+                <li>
+                    <label for="">From</label><br>
+                    <input list="city1" id="input1" value="Hyderabad, India">
+                    <datalist id="city1">
+                        <option value="Hyderabad, India"></option>
+                        <option value="Ahmedabad, India"></option>
+                        <option value="New Delhi, India"> New Delhi, India</option>
+                        <option value="Mumbai, India"></option>
+                        <option value="Bengaluru, India"></option>
+                        <option value="Kolkata, India"></option>
+                    </datalist>
+                </li>
+                <li>
+                    <i class="fa fa-exchange" aria-hidden="true" style="margin-top: 20px; cursor: pointer;" onclick="swap()"></i>
+
+                </li>
+                <li>
+                    <label for="">To</label><br>
+                    <input list="city2" type="text" id="input2" value="New Delhi, India">
+                    <datalist id="city2">
+                        <option value="Ahmedabad, India"></option>
+                        <option value="New Delhi, India"> New Delhi, India</option>
+                        <option value="Mumbai, India"></option>
+                        <option value="Bengaluru, India"></option>
+                        <option value="Kolkata, India"></option>
+                    </datalist>
+                </li>
+                <li>
+                    <label for="">Depart</label><br>
+                    <input type="Date" name="" id="" style="font-size: 15px;">
+                </li>
+                <li>
+                    <label for="">Return</label><br>
+                    <input type="date" name="" id="" style="font-size: 15px;">
+                </li>
+                <li>
+                    <label for="">Travellers, Class</label><br>
+                    <span class="tc" onclick="toggleHiddenDiv()">
+                        <span class="totalCount" id="totalCount" >1</span>
+                             <span class="traveller-title" id="traveller-title"> Traveller</span>,
+                                <span class="travelerClassName" id="travelerClassName">Economy</span>
+                             <i class="fa fa-angle-down"style="font-size: 20px; font-weight: 700; margin-left: 30px;"></i>
+
+                            </span>
+                    <div class="hidden_div" id="hidden_div">
+                        <i class="fa fa-caret-up" id="arrow"style="color: white;"></i>
+                        <div class="tab-container">
+                            <p class="t1">Travellers</p>
+                            <table>
+                                <tbody>
+                                    <tr class="category">
+                                        <th>Adult</th>
+                                    </tr>
+                                    <tr class="cat-info">
+                                        <td>Above 12 years</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td>
+                                            <div class="center">
+                                                <div class="input-group">
+                                                    <span class="input-group-btn">
+                                                        <button type="button" class="btn" 
+                                                            data-type="minus" id="decrease-button1" disabled onclick="decrease('increase-button1' , 'input-number1' , 'decrease-button1' )" >
+                                                            <span class="">-</span>
+                                                        </button>
+                                                    </span>
+                                                    <input type="text" autocomplete="off" name="quant[1]"
+                                                        class="input-number" id="input-number1" value="1" min="1"
+                                                        max="9">
+                                                    <span class="input-group-btn dib">
+                                                        <button type="button" class="btn btn-default btn-number inc"
+                                                            data-type="plus" data-field="quant[1]" id="increase-button1" onclick="increase('increase-button1' , 'input-number1' , 'decrease-button1' )">
+                                                            <span class="">+</span>
+                                                        </button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table>
+                                <tbody>
+                                    <tr class="category">
+                                        <th>Children</th>
+                                    </tr>
+                                    <tr class="cat-info">
+                                        <td>2-12 years</td>
+                                    </tr>
+                                    <tr class="cat-val">
+                                        <td>
+                                            <div class="center">
+                                                <div class="input-group">
+                                                    <span class="">
+                                                        <button type="button" class=" "
+                                                            disabled data-type="minus" id="decrease-button2"  onclick="decrease('increase-button2' , 'input-number2' , 'decrease-button2' )">
+                                                            <span class="" >-</span>
+                                                        </button>
+                                                    </span>
+                                                    <input type="text" autocomplete="off" name="quant[2]"
+                                                        class="input-number" id="input-number2" value="0" min="0"
+                                                        max="8">
+                                                    <span class="input-group-btn">
+                                                        <button type="button" class="btn inc"
+                                                            data-type="plus"  id="increase-button2" onclick="increase('increase-button2' , 'input-number2' , 'decrease-button2' )" >
+                                                            <span class="">+</span>
+                                                        </button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table>
+                                <tbody>
+                                    <tr class="category">
+                                        <th>Infants</th>
+                                    </tr>
+                                    <tr class="cat-info">
+                                        <td>Below 2 years</td>
+                                    </tr>
+                                    <tr class="cat-val">
+                                        <td>
+                                            <div class="center">
+                                                <div class="input-group">
+                                                    <span class="input-group-btn dib">
+                                                        <button type="button" class="btn btn-default btn-number dec"
+                                                            disabled="disabled" data-type="minus" id="decrease-button3" onclick="decrease('increase-button3' , 'input-number3' , 'decrease-button3' )">
+                                                            <span class="">-</span>
+                                                        </button>
+                                                    </span>
+                                                    <input type="text" autocomplete="off" name="quant[3]"
+                                                        class="input-number" id="input-number3" value="0" min="0"
+                                                        max="9">
+                                                    <span class="input-group-btn">
+                                                        <button type="button" class="btn btn-default btn-number inc"
+                                                            data-type="plus" id="increase-button3" onclick="increase('increase-button3' , 'input-number3' , 'decrease-button3' )">
+                                                            <span class="">+</span>
+                                                        </button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="">Class</p>
+                        <div class="">
+                            <div class="">
+                                <label>
+                                    <input type="radio" autocomplete="off" name="classType" value="Economy" checked="">
+                                    <span class="radio-cs"></span>
+                                    <span>Economy</span>
+                                </label>
+                            </div>
+                            <div class="">
+                                <label>
+                                    <input type="radio" autocomplete="off" name="classType" value="Premium">
+                                    <span class="radio-cs"></span>
+                                    <span>Premium Economy</span>
+                                </label>
+                            </div>
+                            <div class="">
+                                <label>
+                                    <input type="radio" autocomplete="off" name="classType" value="Business">
+                                    <span class="radio-cs"></span>
+                                    <span>Business </span>
+                                </label>
+                            </div>
+                        </div>
+                        <button class="form-btn" onclick="toggleHiddenDiv(); counter()">
+                            DONE
+                        </button>
+                    </div>
+                </li>
+                <li>
+                    <input type="submit" name="" id="" onclick="refresh()" class="submit" value="Search Flights"> 
+                </li>
+            </ul>
+        </div>
+
+        <div class="showDestList">
+            <div class="flexitem">
+            <div class="citylistcard" style="background: url('https://imgcld.yatra.com/ytimages/image/upload/t_etw_dom_srp_thumb/v1438931255/Mumbai_75.jpg')rgba(49,58,67,0.7) center center / 198px 256px no-repeat">
+              <div class="card-content">
+               <h2 class="cityname" id="cityCardName" data-value="Mumbai">Delhi to Mumbai Flights</h2>
+               <div class="startfrom">
+                   STARTING FROM <br>
+                   <span>Rs.2,421</span>
+               </div>
+              </div>
+             </div>
+        
+            <div class="citylistcard" style="background: url('https://imgcld.yatra.com/ytimages/image/upload/t_etw_dom_srp_thumb/v1462866094/Bangalore_Map1.jpg')rgba(49,58,67,0.7) center center / 198px 256px no-repeat">
+              <div class="card-content">
+               <h2 class="cityname" id="cityCardName" data-value="Bangalore">Delhi to Bangalore Flights</h2>
+               <div class="startfrom">
+                   STARTING FROM <br>
+                   <span>Rs.2,898</span>
+               </div>
+              </div>
+             </div>
+        
+            <div class="citylistcard" style="background: url('https://imgcld.yatra.com/ytimages/image/upload/t_etw_dom_srp_thumb/v1464767765/Pune_Culture.jpg')rgba(49,58,67,0.7) center center / 198px 256px no-repeat">
+              <div class="card-content">
+               <h2 class="cityname" id="cityCardName" data-value="Pune">Delhi to Pune Flights</h2>
+               <div class="startfrom">
+                   STARTING FROM <br>
+                   <span >Rs.2,245</span>
+               </div>
+              </div>
+             </div>
+        
+            <div class="citylistcard" style="background: url('https://imgcld.yatra.com/ytimages/image/upload/t_etw_dom_srp_thumb/v1484282651/Kolkata_Map.jpg') rgba(49,58,67,0.7) center center / 198px 256px no-repeat">
+              <div class="card-content">
+               <h2 class="cityname" id="cityCardName" data-value="Kolkata">Delhi to Kolkata Flights</h2>
+               <div class="startfrom">
+                   STARTING FROM <br>
+                   <span >Rs.2,230</span>
+               </div>
+              </div>
+             </div>
+        
+            <div class="citylistcard" style="background: url('https://imgcld.yatra.com/ytimages/image/upload/t_etw_dom_srp_thumb/v1462440836/Hyderabad_Map.jpg')rgba(49,58,67,0.7) center center / 198px 256px no-repeat">
+              <div class="card-content">
+               <h2 class="cityname" id="cityCardName" data-value="Hyderabad">Delhi to Hyderabad Flights</h2>
+               <div class="startfrom">
+                   STARTING FROM <br>
+                   <span>Rs.2,098</span>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="flexitem">
+            <div class="citylistcard" style="background: url('https://imgcld.yatra.com/ytimages/image/upload/t_etw_dom_srp_thumb/v1459256304/Goa-Vagator_Beach1.jpg')rgba(49,58,67,0.7) center center / 198px 256px no-repeat">
+              <div class="card-content">
+               <h2 class="cityname" id="cityCardName" data-value="Goa">Delhi to Goa Flights</h2>
+               <div class="startfrom">
+                   STARTING FROM <br>
+                   <span>Rs.3,508</span>
+               </div>
+              </div>
+             </div>
+        
+            <div class="citylistcard" style="background: url('https://imgcld.yatra.com/ytimages/image/upload/t_etw_dom_srp_thumb/v1436436664/Madurai_30.jpg') rgba(49,58,67,0.7) center center / 198px 256px no-repeat">
+              <div class="card-content">
+               <h2 class="cityname" id="cityCardName" data-value="Chennai">Delhi to Chennai Flights</h2>
+               <div class="startfrom">
+                   STARTING FROM <br>
+                   <span>Rs.2,343</span>
+               </div>
+              </div>
+             </div>
+        
+            <div class="citylistcard" style="background: url('https://imgcld.yatra.com/ytimages/image/upload/t_etw_dom_srp_thumb/v1476256367/International_kite_flying_festival_in_white_rann_of_kutch_1476256362.jpg')rgba(49,58,67,0.7) center center / 198px 256px no-repeat">
+              <div class="card-content">
+               <h2 class="cityname" id="cityCardName" data-value="Ahmedabad">Delhi to Ahmedabad Flights</h2>
+               <div class="startfrom">
+                   STARTING FROM <br>
+                   <span>Rs.1,846</span>
+               </div>
+              </div>
+             </div>
+        
+            <div class="citylistcard" style="background: url('https://imgcld.yatra.com/ytimages/image/upload/t_etw_dom_srp_thumb/v1486627137/Lucknow_History.jpg')rgba(49,58,67,0.7) center center / 198px 256px no-repeat">
+              <div class="card-content">
+               <h2 class="cityname" id="cityCardName" data-value="Lucknow">Delhi to Lucknow Flights</h2>
+               <div class="startfrom">
+                   STARTING FROM <br>
+                   <span>Rs.1,824</span>
+               </div>
+              </div>
+             </div>
+        
+            <div class="citylistcard" style="background: url('https://imgcld.yatra.com/ytimages/image/upload/t_etw_dom_srp_thumb/v1439894673/Jaipur_229.jpg')rgba(49,58,67,0.7) center center / 198px 256px no-repeat">
+              <div class="card-content">
+               <h2 class="cityname" id="cityCardName" data-value="Jaipur">Delhi to Jaipur Flights</h2>
+               <div class="startfrom">
+                   STARTING FROM <br>
+                   <span>Rs.1,440</span>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="flexitem">
+            <div class="citylistcard" style="background: url('https://imgcld.yatra.com/ytimages/image/upload/t_etw_dom_srp_thumb/v1462876936/Cochin_Best_Time.jpg')rgba(49,58,67,0.7) center center / 198px 256px no-repeat">
+              <div class="card-content">
+               <h2 class="cityname" id="cityCardName" data-value="Cochin">Delhi to Cochin Flights</h2>
+               <div class="startfrom">
+                   STARTING FROM <br>
+                   <span>Rs.3,447</span>
+               </div>
+              </div>
+             </div>
+        
+            <div class="citylistcard" style="background: url('https://imgcld.yatra.com/ytimages/image/upload/t_etw_dom_srp_thumb/v1433741647/Amritsar_8.jpg')rgba(49,58,67,0.7) center center / 198px 256px no-repeat">
+              <div class="card-content">
+               <h2 class="cityname" id="cityCardName" data-value="Amritsar">Delhi to Amritsar Flights</h2>
+               <div class="startfrom">
+                   STARTING FROM <br>
+                   <span>Rs.1,958</span>
+               </div>
+              </div>
+             </div>
+        
+            <div class="citylistcard" style="background: url('https://imgcld.yatra.com/ytimages/image/upload/t_etw_dom_srp_thumb/v1485952120/Nagpur_Best_Time.jpg')rgba(49,58,67,0.7) center center / 198px 256px no-repeat">
+              <div class="card-content">
+               <h2 class="cityname" id="cityCardName" data-value="Nagpur">Delhi to Nagpur Flights</h2>
+               <div class="startfrom">
+                   STARTING FROM <br>
+                   <span>Rs.1,878</span>
+               </div>
+              </div>
+             </div>
+        
+            <div class="citylistcard" style="background: url('https://imgcld.yatra.com/ytimages/image/upload/t_etw_dom_srp_thumb/v1436429709/Trivandrum_11.jpg')rgba(49,58,67,0.7) center center / 198px 256px no-repeat">
+              <div class="card-content">
+               <h2 class="cityname" id="cityCardName" data-value="Trivandrum">Delhi to Trivandrum Flights</h2>
+               <div class="startfrom">
+                   STARTING FROM <br>
+                   <span>Rs.4,628</span>
+               </div>
+              </div>
+             </div>
+        
+            <div class="citylistcard" style="background: url('https://imgcld.yatra.com/ytimages/image/upload/t_etw_dom_srp_thumb/v1440582882/Chandigarh108.jpg')rgba(49,58,67,0.7) center center / 198px 256px no-repeat ;">
+              <div class="card-content">
+               <h2 class="cityname" id="cityCardName" data-value="Chandigarh">Delhi to Chandigarh Flights</h2>
+               <div class="startfrom">
+                   STARTING FROM <br>
+                   <span>Rs.999</span>
+               </div>
+              </div>
+             </div>
+          </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+    <footer class="footer" id="footer">
+        <div class="dd1">
+            <div class="dd1">
+                <div class="dd1">
+                    <div class="dd1">
+                        <div class="footer_widget">
+                            <div class="footer_logo">
+                                <a href="#">
+                                    <img data-cfsrc="img/footer_logo.png" alt="LOGO"
+                                        style="display:none;visibility:hidden;">
+                                </a>
+                            </div>
+
+                            <div class="socail_links">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-twitter-alt"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-pinterest"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-youtube-play"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cc1">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Company
+                            </h3>
+                            <ul class="links">
+                                <li><a href="#">Pricing</a></li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#"> Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="cc2">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Popular destination
+                            </h3>
+                            <ul class="places">
+                                <li><a href="#">Indonesia</a></li>
+                                <li><a href="#">America</a></li>
+                                <li><a href="#">India</a></li>
+                                <li><a href="#">Switzerland</a></li>
+                                <li><a href="#">Italy</a></li>
+                                <li><a href="#">Canada</a></li>
+                                <li><a href="#">Franch</a></li>
+                                <li><a href="#">England</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>

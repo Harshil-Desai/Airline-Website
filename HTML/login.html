@@ -1,0 +1,174 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Airline</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/font-awesome.min.css">
+    <link rel="stylesheet" href="../CSS/themify-icons.css">
+   
+</head>
+<script src="../Js/login.js"></script>
+<body>
+    <div id="logo">
+        <a href="Homepage.html">
+        <img src="..\Images\logo.png" height="100%" width="100%" >
+        </a>
+        </div>
+    <header class="head">
+        <div>
+            <div class="logo">
+                <a href="index-2.html">
+                </a>
+            </div>
+            <div>
+                <nav>
+                    <ul id="navigation">
+                      <li><a href="Homepage.html">Home</a></li>
+                      <li><a class="active" href="Airlineinfo.html">About</a></li>
+                      <li><a href="Booking.html">Book</a></li>
+                      <li><a href="help.html">Contact and Support</a></li>
+          
+                    </ul>
+                  </nav>
+            </div>
+            <div class="search_icon">
+                <a href="login.html">
+                    <h4> Login </h4>
+                </a>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="main">
+        <div>
+            <div id='login-form' class='login-page'>
+
+                <div class="form-box">
+                    <div class="round" id="round"></div>
+                    <div class='button-box'>
+                        <div id='btn'></div>
+                        <button type='button' onclick='login()' class='toggle-btn'>Log In</button>
+                        <button type='button' onclick='register()' class='toggle-btn' style="margin-left: 25px;">Register</button>
+                    </div>
+                    <form id='login' class='input-group-login' name="login_form" onsubmit="validateLoginForm()">
+                        <input type='text' class='input-field' placeholder='Email Id' required>
+                        <input type='password' class='input-field' placeholder='Enter Password' name="pwd" required>
+                        <input type='checkbox' class='check-box'><span>Remember Password</span>
+                        <button type='submit' class='submit-btn'>Log in</button>
+                    </form>
+                    <form id='register' class='input-group-register' name="registration_form" onsubmit="validateRegistrationForm()">
+                        <input type='text' class='input-field' placeholder='First Name' required>
+                        <input type='text' class='input-field' placeholder='Last Name ' required>
+                        <input type='email' class='input-field' placeholder='Email Id' required>
+                        <input type='password' class='input-field' placeholder='Enter Password' name="pwd" required>
+                        <input type='password' class='input-field' placeholder='Confirm Password' name="cpwd"required>
+                        <input type='checkbox' class='check-box' name="terms"><span>I agree to the terms and conditions</span>
+                        <button type='submit' class='submit-btn'>Register</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+   
+    <footer class="footer" id="footer">
+        <div class="dd1">
+            <div class="dd1">
+                <div class="dd1">
+                    <div class="dd1">
+                        <div class="footer_widget">
+                            <div class="footer_logo">
+                                <a href="#">
+                                    <img data-cfsrc="img/footer_logo.png" alt="LOGO"
+                                        style="display:none;visibility:hidden;">
+                                </a>
+                            </div>
+                            
+                            <div class="socail_links">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-twitter-alt"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-pinterest"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-youtube-play"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cc1">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Company
+                            </h3>
+                            <ul class="links">
+                                <li><a href="#">Pricing</a></li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#"> Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="cc2">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Popular destination
+                            </h3>
+                            <ul class="places">
+                                <li><a href="#">Delhi</a></li>
+                                <li><a href="#">Bombay</a></li>
+                                <li><a href="#">Goa</a></li>
+                                <li><a href="#">Pune</a></li>
+                                <li><a href="#">Ahmedabad</a></li>
+                                <li><a href="#">Hyderabad</a></li>
+                                <li><a href="#">Banglore</a></li>
+                                <li><a href="#">Kolkata</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </footer>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+    <script>
+        var x = document.getElementById('login');
+        var y = document.getElementById('register');
+        var z = document.getElementById('btn');
+        var r = document.getElementById('round');
+        function register() {
+            x.style.left = '-90%';
+            y.style.left = '-75%';
+            z.style.left = '169px';
+            r.style.left = '-100%';
+        }
+        function login() {
+            x.style.left = '-10%';
+            y.style.left = '0%';
+            z.style.left = '0px';
+            r.style.left = '0%';
+        }
+    </script>
+</body>
+
+</html>
