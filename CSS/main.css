@@ -1,0 +1,13 @@
+body {
+    background-color:rgb(165, 243, 243);
+    }
+   div {
+     width: 500px;
+     border: 2.5px solid darkblue;
+     padding: 100px;
+     margin-bottom: 150px;
+     margin-top: 150px;
+     margin-left: 300px;
+     background-color:white;
+     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+   }

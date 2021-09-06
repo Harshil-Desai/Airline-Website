@@ -1,0 +1,96 @@
+/*main-body*/
+body{
+	font-family: sans-serif;
+	background-color:rgb(65, 123, 131);
+}
+#main-heading{
+text-align:center;
+}
+/*common-ids*/
+#info,#OurJourney{
+	display: flex;
+	flex-direction:column;
+	flex-wrap:nowrap;
+	justify-content:space-around;
+	align-items:center;
+}
+/*Why to choose Zenith Airlines Section*/
+.temp{
+	width:70%;
+	margin: 10px;
+	background-color:#27537cbf;
+	padding: 10px;
+	border-radius:5px;
+	box-shadow:2px 2px 2px 2px black;
+}
+.temp:hover{
+	transform: scale(1.05);
+	transition:all 0.4s ease-in-out 0.1s;
+}
+/*Our Journey Section*/
+#work-experience{
+    height:auto;
+    width:70vw;
+    border-radius:10px;
+    position:relative;
+    background-color:#afc2d9db;
+    border: 5px dashed black;
+    padding:5px;
+}
+.experience:hover{
+transition-timing-function:ease-in-out;
+transition-delay:0.1s;
+transition-duration: 0.4s;
+transform:scale(1.05);
+}
+#work-experience .experience{
+    margin:10px;
+    height:150px;
+    width:40%;
+    border:5px solid black;
+    border-radius: 10px;
+    position:relative;
+    left:5%;
+}
+#work-experience .experience:nth-child(2n+1){
+left:55%;
+}
+#timeline{
+    height:100%;
+    width:0px;
+    position:absolute;
+    border-left:5px dashed #dcf1fe;
+    left:50%;
+}
+.timeline-traveler{
+    font-size:40px;
+    position:sticky;
+    top: 20%;
+    transform:rotate(90deg);
+    color:#27537cbf;
+}
+.experience:nth-child(2n)::after{
+    content:'';
+    background-color:lightgrey;
+    position:absolute;
+    border-radius:50%;
+    width:1rem;
+    height:1rem;
+    z-index:1;
+    right:-9%;
+
+}
+.experience:nth-child(2n+1)::after{
+    content:'';
+    background-color:lightgrey;
+    position:absolute;
+    border-radius:50%;
+    width:1rem;
+    height:1rem;
+    z-index:1;
+    left:-16.5%;
+}
+.experience{
+	background-color:#27537cbf;
+	padding: 5px;
+}

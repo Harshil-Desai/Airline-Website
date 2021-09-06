@@ -1,0 +1,132 @@
+body{
+	color:#010610;
+	width: 100%;
+	font-family: sans-serif;
+	background-color:rgb(65, 123, 131);
+}
+#main-body{
+	padding:1.5%;
+	width: 60vw;
+	height:auto;
+	margin:auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	position:relative;
+}
+
+/*main-image*/
+#main-image{
+margin: auto;
+height:70vh;
+width:100%;
+border: 5px solid black;
+border-radius:10px;
+contain:content;
+}
+#main-image img:hover{
+	opacity:0.8;
+	transition:all 1.5s ease-in-out 0.2s;
+	transform: scale(1.5);
+}
+/*search button*/
+#search{
+	height: 8vh;
+	width: 15vw;
+	border-radius: 10px;
+	font-size: 2.2vh;
+	letter-spacing:0.1vw;
+	position:absolute;
+	left: 7%;
+	top: 25%;
+	box-shadow: 0px 0px 4px 2px #1310408a;
+	font-weight:600;
+}
+#search a{
+	text-decoration:none;
+	color:black;
+}
+#search:hover{
+	transform: scale(1.02);
+}
+/*content-section*/
+#content{
+	height:auto;
+	width:100%;
+	display: flex;
+	flex-direction:column;
+	justify-content:space-around;
+	align-items:center;
+	margin-top:7vh;
+}
+
+/*top-offer section*/
+#top-offer{
+background-color:#2e2f505e;
+height:70vh;
+width: 95%;
+border-radius:2%;
+margin: 10px;
+padding: 8px;
+ border: 5px solid black;
+}
+#top-offer h2{
+	text-align:center;
+}
+.one{
+	font-weight: 600;
+	margin-right: 35px;
+	float: right;
+}
+.two{
+	color: #010610;;
+}
+.three{
+	margin-left: 20px;
+}
+/*airline-info section*/
+#airline-info{
+	height:70vh;
+	background-color:#2e2f505e;
+	width: 95%;
+	display: flex;
+	flex-direction:column;
+	justify-content:space-between;
+	align-items:center;
+	border-radius:2%;
+	margin: 10px;
+	padding:8px;
+	border: 5px solid black;
+}
+#about-image1{
+	height: 40%;
+	width:80%;
+	display: flex;
+	flex-direction:row;
+	justify-content:space-between;
+}
+.infoimage{
+	height:90%;
+	width:50%;
+}
+.infoimage:hover{
+     opacity:0.6;
+	transition:all 1s;
+}
+.infoimage img{
+	box-shadow:1px 1px 4px 4px #0b0b3c87;
+}
+#about-info{
+	line-height:2.3vh;
+	letter-spacing:1px;
+	font-size:2.1vh;
+	height:40%;
+	width:80%;
+}
+button{
+	height:4vh;
+	width: 10vw;
+	font-size: 2vh;
+	background-color:#27537cbf;
+	box-shadow:1px 1px 1px 1px black;
+}

@@ -1,0 +1,313 @@
+body {
+  margin:-2px;
+  font-family: "Rubik", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  width: 100%;
+  background-color:rgb(65, 123, 131);
+}
+
+.main{
+	background-color: rgb(65, 123, 131);
+}
+
+#login-form{
+  display: inline-block;
+  position: relative;
+  left: 32.5%;
+  width: 35%;
+  height: 600px;
+}
+
+.form-box
+{
+  width:100%;
+	height:600px;
+	position:relative;
+	margin:2% auto;
+	background:rgba(7, 30, 36, 0.8);
+	padding:10px;
+	overflow: hidden;
+    border-radius:5%; 
+
+}
+.button-box
+{
+	width:320px;
+	margin:35px auto;
+	position:relative;
+	border:2px solid black;
+	border-radius: 30px;
+ 	background: rgba(226, 239, 252, 0.336);
+}
+.toggle-btn
+{
+	padding:10px 50px;
+	cursor:pointer;
+	background:transparent;
+	border:0;
+	outline: none;
+ 	margin-left:  0px;
+	position: relative;
+	color: black;
+}
+#btn
+{
+	top: 0;
+	left:0;
+	position: absolute;
+	width: 150px;
+	height: 100%;
+	background: #7199a5;
+	border-radius: 30px;
+	transition: .5s;
+}
+.input-group-login
+{
+	top: 150px;
+	margin-left: 30%;	
+	position:absolute;
+	width:280px;
+	transition:.5s;
+}
+.input-group-register
+{
+ 	top: 120px;
+	margin-left: 100%;
+	position:absolute;
+	width:280px;
+	transition:.5s;
+}
+.input-field
+{
+	width: 100%;
+	padding:10px 0;
+	margin:5px 0;
+	border-left:0;
+	border-top:0;
+	border-right:0;
+	border-bottom: 1px solid #999;
+	outline:none;
+	background: transparent;
+	color: white;
+}
+.submit-btn
+{
+	width: 85%;
+	padding: 10px 30px;
+	cursor: pointer;
+	display: block;
+	margin: auto;
+	background: #7199a5;;
+	border: 0;
+	outline: none;
+	border-radius: 30px;
+}
+.check-box
+{
+	margin: 30px 10px 34px 0;
+}
+span
+{
+	color:black;
+	font-size:15px;
+	bottom:68px;
+	
+}
+#login
+{
+	left:-50px;
+}
+#login input
+{
+	font-size:15;
+	color: white;
+}
+#register
+{
+	left:450px;
+}
+#register input
+{
+	color:white;
+	font-size: 15;
+}
+/* line 21, ../../Arafath/CL/December/231. Travel-02/HTML/scss/theme-default.scss */
+a:focus,
+.button:focus, button:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+/* line 26, ../../Arafath/CL/December/231. Travel-02/HTML/scss/theme-default.scss */
+a:focus {
+  text-decoration: none;
+}
+
+
+/* line 35, ../../Arafath/CL/December/231. Travel-02/HTML/scss/theme-default.scss */
+a,
+button {
+  color: #1F1F1F;
+  outline: medium none;
+}
+
+/* line 40, ../../Arafath/CL/December/231. Travel-02/HTML/scss/theme-default.scss */
+h1, h2, h3, h4, h5 {
+  font-family: "Rubik", sans-serif;
+  color: #001D38;
+}
+
+/* line 44, ../../Arafath/CL/December/231. Travel-02/HTML/scss/theme-default.scss */
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  color: inherit;
+}
+
+/* line 53, ../../Arafath/CL/December/231. Travel-02/HTML/scss/theme-default.scss */
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* line 57, ../../Arafath/CL/December/231. Travel-02/HTML/scss/theme-default.scss */
+li {
+  list-style: none;
+  padding: 5px;
+}
+
+/* line 60, ../../Arafath/CL/December/231. Travel-02/HTML/scss/theme-default.scss */
+p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  color:black;
+  margin-bottom:1px;
+  font-family: "Rubik", sans-serif;
+}
+
+/* line 69, ../../Arafath/CL/December/231. Travel-02/HTML/scss/theme-default.scss */
+label {
+  color: #7e7e7e;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.search_icon{
+  /* background-color: lightblue; */
+  background: lightblue;
+  position: relative;
+  float: right; 
+  top: 20px;
+  right: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 30px;
+  border: 1px solid black;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  /* padding-top: 20px;
+  padding-bottom: 20px; */
+}
+
+header li{
+  float: left;
+  padding: 20px;
+  font-size: 20px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  /* background-color: lightblue; */
+
+
+}
+nav {
+  position: relative;
+  left: 10%;
+  top: 15px;
+}
+.head{
+	margin:-1.5px;
+	height: 100px;
+	width: 100%;
+	/* background-color: rgb(34, 68, 139); */
+	background-color: rgb(39, 89, 105);
+
+}
+#logo{
+	height:90px;
+	 width:90px;
+	position:absolute;
+	left:20px;
+	top:-5px;
+	margin:10px;
+}
+#logo :hover{
+border-radius:50%;
+box-shadow:0px 0px 4px 4px rgb(199, 226, 234);
+opacity:0.8;
+}
+
+
+
+.footer {
+
+  background-repeat: no-repeat;
+  background-position: center center;
+  /* background-repeat: no-repeat; */
+  background-size: cover;
+  background-color: rgb(39, 89, 105);
+  height: 300px;
+  z-index: 0;
+}
+
+.footer .socail_links ul li {
+  display: inline-block;
+  /* color: rgb(64, 230, 230); */
+
+} 
+
+.footer .socail_links{
+	float: left;
+	position: relative;
+
+}
+
+.footer .socail_links ul li a {
+  font-size: 20px;
+  color: rgb(202, 240, 245);
+  width: 30px;
+  display: inline-block;
+  text-align: center;
+  background: transparent;
+  margin-top: 20px;
+  margin-right: 20px;
+  line-height: 40px !important;
+  text-decoration: none;
+}
+
+.footer .socail_links ul li a:hover{
+	text-decoration: none;
+	color: rgb(15, 2, 5);
+}
+
+.cc1{
+	float: left;
+	position: relative;
+	left: 10%;
+}
+
+.cc2{
+	float: left;
+	position: relative;
+	left: 20%;
+}
+#navigation a:hover{
+	color:rgb(199, 226, 234);
+}
+#navigation a{
+	text-decoration:none;
+}
